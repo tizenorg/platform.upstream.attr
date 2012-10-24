@@ -75,9 +75,6 @@ export DIST_ROOT DIST_INSTALL DIST_INSTALL_DEV DIST_INSTALL_LIB
 /usr/bin/make install DIST_MANIFEST="$DIST_INSTALL"
 /usr/bin/make install-dev DIST_MANIFEST="$DIST_INSTALL_DEV"
 /usr/bin/make install-lib DIST_MANIFEST="$DIST_INSTALL_LIB"
-ln -sf /%{_lib}/$(readlink $RPM_BUILD_ROOT/%{_lib}/libattr.so) \
-	$RPM_BUILD_ROOT/%{_libdir}/libattr.so
-rm -f $RPM_BUILD_ROOT/%{_lib}/libattr.{a,la,so}
 rm -f $RPM_BUILD_ROOT%{_mandir}/man2/*xattr.2*
 rm -f $RPM_BUILD_ROOT/%{_libdir}/libattr.la
 install -d -m 755 $RPM_BUILD_ROOT/%{_sysconfdir}
