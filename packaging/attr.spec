@@ -82,7 +82,7 @@ rm -f $RPM_BUILD_ROOT%{_mandir}/man2/*xattr.2*
 rm -f $RPM_BUILD_ROOT/%{_libdir}/libattr.la
 install -d -m 755 $RPM_BUILD_ROOT/%{_sysconfdir}
 install -m 644 %_sourcedir/xattr.conf $RPM_BUILD_ROOT/%{_sysconfdir}
-chmod 755 $RPM_BUILD_ROOT/%{_lib}/libattr.so.1*
+chmod 755 $RPM_BUILD_ROOT/%{_libdir}/libattr.so.1*
 
 %post -n %lname -p /sbin/ldconfig
 
