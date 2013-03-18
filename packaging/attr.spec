@@ -2,7 +2,7 @@ Name:           attr
 %define lname	libattr
 Summary:        Commands for Manipulating Extended Attributes
 License:        GPL-2.0+ ; LGPL-2.1+
-Group:          System/Filesystems
+Group:          Base/File Systems
 Version:        2.4.46
 Release:        0
 Source:         %{name}-%{version}.src.tar.gz
@@ -19,7 +19,7 @@ the same name.
 
 %package -n %lname
 Summary:        A dynamic library for filesystem extended attribute support
-Group:          System/Libraries
+Group:          Base/File Systems
 
 %description -n %lname
 This package contains the libattr.so dynamic library, which contains
@@ -27,10 +27,11 @@ the extended attribute library functions.
 
 %package -n libattr-devel
 Summary:        Include Files and Libraries mandatory for Development
-Group:          Development/Libraries/C and C++
+Group:          Development/Libraries
 Provides:       attr-devel
 Obsoletes:      attr-devel
-Requires:       %lname = %version, glibc-devel
+Requires:       %lname = %version
+Requires:       glibc-devel
 
 %description -n libattr-devel
 This package contains the libraries and header files needed to develop
@@ -40,7 +41,7 @@ IRIX compatibility interface is also provided.
 
 %package -n libattr-devel-static
 Summary:        Include Files and Libraries mandatory for Development
-Group:          Development/Libraries/C and C++
+Group:          Development/Libraries
 Provides:       libattr-devel:%{_libdir}/libattr.a
 Requires:       libattr-devel = %version
 
