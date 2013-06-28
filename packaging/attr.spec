@@ -8,6 +8,7 @@ Release:        0
 Source:         %{name}-%{version}.src.tar.gz
 Source1:        xattr.conf
 Source2:        baselibs.conf
+Source1001: 	attr.manifest
 Url:            http://download.savannah.gnu.org/releases-noredirect/attr/
 BuildRequires:  autoconf
 
@@ -51,6 +52,7 @@ statically linked programs which make use of extended attributes.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 export OPTIMIZER="$RPM_OPT_FLAGS -fPIC"
@@ -89,6 +91,7 @@ chmod 755 $RPM_BUILD_ROOT/%{_libdir}/libattr.so.1*
 %docs_package
 
 %files
+%manifest %{name}.manifest
 %defattr (-,root,root)
 %dir %attr(755,root,root) /usr/share/doc/packages/attr
 %doc %attr(644,root,root) /usr/share/doc/packages/attr/README
@@ -100,6 +103,7 @@ chmod 755 $RPM_BUILD_ROOT/%{_libdir}/libattr.so.1*
 %attr(755,root,root) %{_bindir}/setfattr
 
 %files -n libattr-devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %dir %attr(755,root,root) %{_includedir}/attr
 %attr(644,root,root) %{_includedir}/attr/attributes.h
@@ -109,10 +113,12 @@ chmod 755 $RPM_BUILD_ROOT/%{_libdir}/libattr.so.1*
 %attr(755,root,root) %{_libdir}/libattr.so
 
 %files -n libattr-devel-static
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_libdir}/libattr.a
 
 %files -n %lname
+%manifest %{name}.manifest
 %defattr (-,root,root)
 %{_libdir}/libattr.so.1*
 %config %{_sysconfdir}/xattr.conf
