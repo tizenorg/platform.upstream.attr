@@ -3,7 +3,7 @@ Name:           attr
 Summary:        Commands for Manipulating Extended Attributes
 License:        GPL-2.0+ ; LGPL-2.1+
 Group:          Base/File Systems
-Version:        2.4.46
+Version:        2.4.47
 Release:        0
 Source:         %{name}-%{version}.src.tar.gz
 Source1:        xattr.conf
@@ -57,7 +57,6 @@ cp %{SOURCE1001} .
 %build
 export OPTIMIZER="$RPM_OPT_FLAGS -fPIC"
 export DEBUG=-DNDEBUG
-autoconf
 CFLAGS="$RPM_OPT_FLAGS" \
 %configure \
 	--prefix=/ \
@@ -122,5 +121,7 @@ chmod 755 $RPM_BUILD_ROOT/%{_libdir}/libattr.so.1*
 %defattr (-,root,root)
 %{_libdir}/libattr.so.1*
 %config %{_sysconfdir}/xattr.conf
+%dir %attr(755,root,root) /usr/share/doc/packages/attr
+%doc %attr(644,root,root) /usr/share/doc/packages/attr/COPYING.LGPL
 
 %changelog
