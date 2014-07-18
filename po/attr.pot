@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-19 10:56-0700\n"
+"POT-Creation-Date: 2013-05-19 07:15-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,26 +87,26 @@ msgstr ""
 msgid "At least one of -s, -g, -r, or -l is required\n"
 msgstr ""
 
-#: ../getfattr/getfattr.c:97 ../setfattr/setfattr.c:70
+#: ../getfattr/getfattr.c:98 ../setfattr/setfattr.c:71
 msgid "No such attribute"
 msgstr ""
 
-#: ../getfattr/getfattr.c:258
+#: ../getfattr/getfattr.c:259
 #, c-format
 msgid "%s: Removing leading '/' from absolute path names\n"
 msgstr ""
 
-#: ../getfattr/getfattr.c:375
+#: ../getfattr/getfattr.c:377
 #, c-format
 msgid "%s %s -- get extended attributes\n"
 msgstr ""
 
-#: ../getfattr/getfattr.c:377 ../setfattr/setfattr.c:176
+#: ../getfattr/getfattr.c:379 ../setfattr/setfattr.c:177
 #, c-format
 msgid "Usage: %s %s\n"
 msgstr ""
 
-#: ../getfattr/getfattr.c:380
+#: ../getfattr/getfattr.c:382
 #, c-format
 msgid ""
 "  -n, --name=name         get the named extended attribute value\n"
@@ -123,39 +123,39 @@ msgid ""
 "      --help              this help text\n"
 msgstr ""
 
-#: ../getfattr/getfattr.c:476
+#: ../getfattr/getfattr.c:478
 #, c-format
 msgid "%s: invalid regular expression \"%s\"\n"
 msgstr ""
 
-#: ../getfattr/getfattr.c:490
+#: ../getfattr/getfattr.c:492
 #, c-format
 msgid ""
 "Usage: %s %s\n"
 "Try `%s --help' for more information.\n"
 msgstr ""
 
-#: ../setfattr/setfattr.c:124
+#: ../setfattr/setfattr.c:125
 #, c-format
 msgid "%s: %s: No filename found in line %d, aborting\n"
 msgstr ""
 
-#: ../setfattr/setfattr.c:128
+#: ../setfattr/setfattr.c:129
 #, c-format
 msgid "%s: No filename found in line %d of standard input, aborting\n"
 msgstr ""
 
-#: ../setfattr/setfattr.c:175
+#: ../setfattr/setfattr.c:176
 #, c-format
 msgid "%s %s -- set extended attributes\n"
 msgstr ""
 
-#: ../setfattr/setfattr.c:177
+#: ../setfattr/setfattr.c:178
 #, c-format
 msgid "       %s %s\n"
 msgstr ""
 
-#: ../setfattr/setfattr.c:179
+#: ../setfattr/setfattr.c:180
 #, c-format
 msgid ""
 "  -n, --name=name         set the value of the named extended attribute\n"
@@ -167,7 +167,7 @@ msgid ""
 "      --help              this help text\n"
 msgstr ""
 
-#: ../setfattr/setfattr.c:254
+#: ../setfattr/setfattr.c:255
 #, c-format
 msgid ""
 "Usage: %s %s\n"

@@ -22,6 +22,10 @@ Try various valid and invalid names
 	> user.name
 	> 
 	
+	$ setfattr -x user.name f
+	$ sh -c 'getfattr -n user.name f && echo zero exit code'
+	> f: user.name: No such attribute
+	
 	$ setfattr -n user.n -v value f
 	$ rm f
 
@@ -217,6 +221,14 @@ Attributes of symlinks vs. the files pointed to
 
 	$ rm f
 
+Attributes of symlinks vs. the files pointed to in a directory
+
+	$ mkdir src
+	$ touch src/target
+	$ setfattr -n user.color -v blue src/target
+	$ ln -s src symlink
+	$ getfattr -n user.color -h symlink 2>/dev/null
+
 Tests for file name that contain special characters
 
 	$ touch "f "
@@ -264,7 +276,7 @@ Tests for proper path recursion reported by Tony Ernst <tee@sgi.com> bnc#457660
 	$ setfattr -n "user.9" 1/2/3
 	$ setfattr -n "user.a" 1/2/3
 
-	$ getfattr -h -L -R -m '.' -e hex 1 | ./sort-getfattr-output
+	$ getfattr -h -L -R -m '.' -e hex 1 | grep -v selinux | ./sort-getfattr-output
 	> # file: 1
 	> user.9
 	> user.a
@@ -278,7 +290,7 @@ Tests for proper path recursion reported by Tony Ernst <tee@sgi.com> bnc#457660
 	> user.a
 	>
 
-	$ getfattr -h -P -R -m '.' -e hex 1/2 | ./sort-getfattr-output
+	$ getfattr -h -P -R -m '.' -e hex 1/2 | grep -v selinux | ./sort-getfattr-output
 	> # file: 1/2
 	> user.9
 	> user.a
