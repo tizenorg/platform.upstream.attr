@@ -21,7 +21,7 @@
 #include "error_context.h"
 #include "attr/libattr.h"
 
-int
+__attribute__((visibility("default"))) int
 attr_copy_check_permissions(const char *name, struct error_context *ctx)
 {
 	return attr_copy_action(name, ctx) == 0;

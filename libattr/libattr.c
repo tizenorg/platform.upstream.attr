@@ -100,7 +100,7 @@ found:
 }
 
 
-int
+__attribute__((visibility("default"))) int
 attr_get(const char *path, const char *attrname, char *attrvalue,
 	 int *valuelength, int flags)
 {
@@ -124,7 +124,7 @@ attr_get(const char *path, const char *attrname, char *attrvalue,
 	return 0;
 }
 
-int
+__attribute__((visibility("default"))) int
 attr_getf(int fd, const char *attrname, char *attrvalue,
 	  int *valuelength, int flags)
 {
@@ -145,7 +145,7 @@ attr_getf(int fd, const char *attrname, char *attrvalue,
 	return 0;
 }
 
-int
+__attribute__((visibility("default"))) int
 attr_set(const char *path, const char *attrname, const char *attrvalue,
 	 const int valuelength, int flags)
 {
@@ -172,7 +172,7 @@ attr_set(const char *path, const char *attrname, const char *attrvalue,
 	return c;
 }
 
-int
+__attribute__((visibility("default"))) int
 attr_setf(int fd, const char *attrname,
 	  const char *attrvalue, const int valuelength, int flags)
 {
@@ -196,7 +196,7 @@ attr_setf(int fd, const char *attrname,
 	return c;
 }
 
-int
+__attribute__((visibility("default"))) int
 attr_remove(const char *path, const char *attrname, int flags)
 {
 	int c, compat;
@@ -216,7 +216,7 @@ attr_remove(const char *path, const char *attrname, int flags)
 	return c;
 }
 
-int
+__attribute__((visibility("default"))) int
 attr_removef(int fd, const char *attrname, int flags)
 {
 	int c, compat;
@@ -263,7 +263,7 @@ attr_list_pack(const char *name, const int valuelen,
 	return 0;
 }
 
-int
+__attribute__((visibility("default"))) int
 attr_list(const char *path, char *buffer, const int buffersize, int flags,
 	  attrlist_cursor_t *cursor)
 {
@@ -309,7 +309,7 @@ attr_list(const char *path, char *buffer, const int buffersize, int flags,
 	return 0;
 }
 
-int
+__attribute__((visibility("default"))) int
 attr_listf(int fd, char *buffer, const int buffersize, int flags,
 	   attrlist_cursor_t *cursor)
 {
@@ -399,7 +399,7 @@ attr_singlef(const int fd, attr_multiop_t *op, int flags)
  * ATTR_DONTFOLLOW was set in the flag argument." flags must be
  * checked here as they are not passed into the kernel.
  */
-int
+__attribute__((visibility("default"))) int
 attr_multi(const char *path, attr_multiop_t *multiops, int count, int flags)
 {
 	int i, tmp, r = -1;
@@ -416,7 +416,7 @@ attr_multi(const char *path, attr_multiop_t *multiops, int count, int flags)
 	return r;
 }
 
-int
+__attribute__((visibility("default"))) int
 attr_multif(int fd, attr_multiop_t *multiops, int count, int flags)
 {
 	int i, tmp, r = -1;

@@ -119,19 +119,19 @@ typedef struct attr_multiop {
  * be set to the actual number of bytes used in the value buffer upon return.
  * The return value is -1 on error (w/errno set appropriately), 0 on success.
  */
-extern int attr_get (const char *__path, const char *__attrname,
+__attribute__((visibility("default"))) extern int attr_get (const char *__path, const char *__attrname,
 			char *__attrvalue, int *__valuelength, int __flags);
-extern int attr_getf (int __fd, const char *__attrname, char *__attrvalue,
+__attribute__((visibility("default"))) extern int attr_getf (int __fd, const char *__attrname, char *__attrvalue,
 			int *__valuelength, int __flags);
 
 /*
  * Set the value of an attribute, creating the attribute if necessary.
  * The return value is -1 on error (w/errno set appropriately), 0 on success.
  */
-extern int attr_set (const char *__path, const char *__attrname,
+__attribute__((visibility("default"))) extern int attr_set (const char *__path, const char *__attrname,
 			const char *__attrvalue, const int __valuelength,
 			int __flags);
-extern int attr_setf (int __fd, const char *__attrname,
+__attribute__((visibility("default"))) extern int attr_setf (int __fd, const char *__attrname,
 			const char *__attrvalue, const int __valuelength,
 			int __flags);
 
@@ -139,9 +139,9 @@ extern int attr_setf (int __fd, const char *__attrname,
  * Remove an attribute.
  * The return value is -1 on error (w/errno set appropriately), 0 on success.
  */
-extern int attr_remove (const char *__path, const char *__attrname,
+__attribute__((visibility("default"))) extern int attr_remove (const char *__path, const char *__attrname,
 			int __flags);
-extern int attr_removef (int __fd, const char *__attrname, int __flags);
+__attribute__((visibility("default"))) extern int attr_removef (int __fd, const char *__attrname, int __flags);
 
 /*
  * List the names and sizes of the values of all the attributes of an object.
@@ -150,9 +150,9 @@ extern int attr_removef (int __fd, const char *__attrname, int __flags);
  * fit into the buffer on the first system call.
  * The return value is -1 on error (w/errno set appropriately), 0 on success.
  */
-int attr_list(const char *__path, char *__buffer, const int __buffersize,
+__attribute__((visibility("default"))) int attr_list(const char *__path, char *__buffer, const int __buffersize,
 		int __flags, attrlist_cursor_t *__cursor);
-int attr_listf(int __fd, char *__buffer, const int __buffersize,
+__attribute__((visibility("default"))) int attr_listf(int __fd, char *__buffer, const int __buffersize,
 		int __flags, attrlist_cursor_t *__cursor);
 
 /*
@@ -172,9 +172,9 @@ int attr_listf(int __fd, char *__buffer, const int __buffersize,
  * the corresponding "simple" attribute interface.  For example: the args
  * to a ATTR_OP_GET are the same as the args to an attr_get() call.
  */
-extern int attr_multi (const char *__path, attr_multiop_t *__oplist,
+__attribute__((visibility("default"))) extern int attr_multi (const char *__path, attr_multiop_t *__oplist,
 			int __count, int __flags);
-extern int attr_multif (int __fd, attr_multiop_t *__oplist,
+__attribute__((visibility("default"))) extern int attr_multif (int __fd, attr_multiop_t *__oplist,
 			int __count, int __flags);
 
 #ifdef __cplusplus
