@@ -151,7 +151,7 @@ fail:
 	return -1;
 }
 
-__attribute__((visibility("default"))) int
+int
 attr_copy_action(const char *name, struct error_context *ctx)
 {
 	struct attr_action *action = attr_actions;

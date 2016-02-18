@@ -38,6 +38,8 @@
 # define SYSCALL(args...)	( errno = ENOSYS, -1 )
 #endif
 
+#pragma GCC visibility push(default)
+
 int setxattr (const char *path, const char *name,
 			void *value, size_t size, int flags)
 {
@@ -103,3 +105,4 @@ int fremovexattr (int filedes, const char *name)
 {
 	return SYSCALL(__NR_fremovexattr, filedes, name);
 }
+#pragma GCC visibility pop

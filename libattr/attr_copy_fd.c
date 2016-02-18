@@ -58,7 +58,7 @@
    copied successfully, the file mode permission bits are copied as
    a side effect. This may not always the case, so the file mode
    and/or ownership must be copied separately. */
-__attribute__((visibility("default"))) int
+int
 attr_copy_fd(const char *src_path, int src_fd,
 	     const char *dst_path, int dst_fd,
 	     int (*check) (const char *, struct error_context *),
