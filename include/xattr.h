@@ -33,30 +33,30 @@
 
 __BEGIN_DECLS
 
-extern int setxattr (const char *__path, const char *__name,
+__attribute__ ((visibility ("default"))) extern int setxattr (const char *__path, const char *__name,
 		      const void *__value, size_t __size, int __flags) __THROW;
-extern int lsetxattr (const char *__path, const char *__name,
+__attribute__ ((visibility ("default"))) extern int lsetxattr (const char *__path, const char *__name,
 		      const void *__value, size_t __size, int __flags) __THROW;
-extern int fsetxattr (int __filedes, const char *__name,
+__attribute__ ((visibility ("default"))) extern int fsetxattr (int __filedes, const char *__name,
 		      const void *__value, size_t __size, int __flags) __THROW;
 
-extern ssize_t getxattr (const char *__path, const char *__name,
+__attribute__ ((visibility ("default"))) extern ssize_t getxattr (const char *__path, const char *__name,
 				void *__value, size_t __size) __THROW;
-extern ssize_t lgetxattr (const char *__path, const char *__name,
+__attribute__ ((visibility ("default"))) extern ssize_t lgetxattr (const char *__path, const char *__name,
 				void *__value, size_t __size) __THROW;
-extern ssize_t fgetxattr (int __filedes, const char *__name,
+__attribute__ ((visibility ("default"))) extern ssize_t fgetxattr (int __filedes, const char *__name,
 				void *__value, size_t __size) __THROW;
 
-extern ssize_t listxattr (const char *__path, char *__list,
+__attribute__ ((visibility ("default"))) extern ssize_t listxattr (const char *__path, char *__list,
 				size_t __size) __THROW;
-extern ssize_t llistxattr (const char *__path, char *__list,
+__attribute__ ((visibility ("default"))) extern ssize_t llistxattr (const char *__path, char *__list,
 				size_t __size) __THROW;
-extern ssize_t flistxattr (int __filedes, char *__list,
+__attribute__ ((visibility ("default"))) extern ssize_t flistxattr (int __filedes, char *__list,
 				size_t __size) __THROW;
 
-extern int removexattr (const char *__path, const char *__name) __THROW;
-extern int lremovexattr (const char *__path, const char *__name) __THROW;
-extern int fremovexattr (int __filedes,   const char *__name) __THROW;
+__attribute__ ((visibility ("default"))) extern int removexattr (const char *__path, const char *__name) __THROW;
+__attribute__ ((visibility ("default"))) extern int lremovexattr (const char *__path, const char *__name) __THROW;
+__attribute__ ((visibility ("default"))) extern int fremovexattr (int __filedes,   const char *__name) __THROW;
 
 __END_DECLS
 
