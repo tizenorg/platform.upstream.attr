@@ -57,7 +57,7 @@ cp %{SOURCE1001} .
 %build
 export OPTIMIZER="$RPM_OPT_FLAGS -fPIC"
 export DEBUG=-DNDEBUG
-CFLAGS="$RPM_OPT_FLAGS -fvisibility=hidden" \
+CFLAGS="$RPM_OPT_FLAGS -flto -fvisibility=hidden" \
 %configure \
 	--prefix=/ \
 	--enable-gettext=no \
